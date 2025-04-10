@@ -29,6 +29,10 @@ public class Exercise2_programation {
             int radio = Integer.parseInt(JOptionPane.showInputDialog("Radio del motor:"));
             double revoluciones = ((Terrestre) vehiculo).calcularRevolucionesMotor(fuerza, radio);
             JOptionPane.showMessageDialog(null, "Revoluciones del motor: " + revoluciones);
+
+            ((Terrestre) vehiculo).acelerar(50);
+            ((Terrestre) vehiculo).frenar(20);
+
         } else {
             velocidadMaxima = Integer.parseInt(JOptionPane.showInputDialog("Velocidad máxima:"));
             vehiculo = new Acuatico(velocidadActual, velocidadMaxima);
@@ -39,6 +43,9 @@ public class Exercise2_programation {
 
             double revoluciones = ((Acuatico) vehiculo).calcularRevolucionesMotor(fuerza, radio);
             int recomendacion = ((Acuatico) vehiculo).recomendarVelocidad(viento);
+
+            ((Acuatico) vehiculo).acelerar(velocidadActual);
+            ((Acuatico) vehiculo).frenar(recomendacion);
 
             JOptionPane.showMessageDialog(null,
                     "Revoluciones del motor: " + revoluciones + "\nVelocidad recomendada: " + recomendacion);
