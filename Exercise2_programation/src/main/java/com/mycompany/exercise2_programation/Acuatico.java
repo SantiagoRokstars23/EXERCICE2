@@ -23,4 +23,20 @@ public class Acuatico extends Vehiculo implements Vela, Motor {
     public int recomendarVelocidad(int velocidadViento) {
         return velocidadViento < 20 ? 40 : 25;
     }
+
+    @Override
+    public void acelerar(int velocidad) {
+        velocidadActual += velocidad;
+        if (velocidadActual > velocidadMaxima) {
+            velocidadActual = velocidadMaxima;
+        }
+    }
+
+    @Override
+    public void frenar(int velocidad) {
+        velocidadActual -= velocidad;
+        if (velocidadActual < 0) {
+            velocidadActual = 0;
+        }
+    }
 }

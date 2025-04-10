@@ -22,17 +22,7 @@ public abstract class Vehiculo {
         System.out.println("Velocidad Actual: " + velocidadActual + " | Velocidad Máxima: " + velocidadMaxima);
     }
 
-    public void acelerar(int velocidad) {
-        velocidadActual += velocidad;
-        if (velocidadActual > velocidadMaxima) {
-            velocidadActual = velocidadMaxima;
-        }
-    }
+    public abstract void acelerar(int velocidad);
 
-    public void frenar(int velocidad) {
-        velocidadActual -= velocidad;
-        if (velocidadActual < 0) {
-            velocidadActual = 0;
-        }
-    }
+    public abstract void frenar(int velocidad);
 }
